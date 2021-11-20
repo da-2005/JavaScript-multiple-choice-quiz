@@ -38,6 +38,10 @@ body.wrong{
     box-shadow: 0 0 10px 2px;
 }
 
+/* #question{
+    font-size: larger;
+} */
+
 .btn-grid {
     display: grid;
     grid-template-columns: repeat(2, auto);
@@ -53,6 +57,7 @@ body.wrong{
     padding: 5px 10px;
     color: white;
     outline: none;
+    font-size: larger;
 }
 
 .btn:hover {

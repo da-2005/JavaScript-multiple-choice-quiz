@@ -3,6 +3,7 @@ const nextButton = document.getElementById('next-btn');
 const questionContainerElement = document.getElementById('question-container');
 const questionElement = document.getElementById('question');
 const answerButtonsElement = document.getElementById('answer-buttons');
+var intervalTime = document.getElementById('count');
 var shuffledQuestions, currentQuestionIndex;
 
 
@@ -19,23 +20,11 @@ function startGame(){
     currentQuestionIndex = 0;
     questionContainerElement.classList.remove('hide');
     setNextQuestion();
-    var count = 5;
-    var interval = setInterval( function(){
-    document.getElementById('count').innerHTML=count;
-    count--;
-    if (count === 0){
-        clearInterval(interval);
-        document.getElementById('count').innerHTML='Time Left';
-    // or...
-        alert("You're out of time!");
-        resetState();
-        questionElement.classList.add('hide');
-        
-        }
-    }, 1000);
-    startButton.classList.add('hide');
+    
+    
     
 }
+
 
 function setNextQuestion(){
     resetState();
@@ -66,6 +55,7 @@ function resetState() {
         answerButtonsElement.removeChild(answerButtonsElement.firstChild)
     }
     startButton.classList.remove('hide');
+
 }
 
 function selectAnswer(e){
